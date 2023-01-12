@@ -2,7 +2,7 @@ const workoutService = require ("../services/workoutService");
 
 const getAllWorkouts = (req, res) => {
     const allWorkouts = workoutService.getAllWorkouts();
-    res.send("Get all workouts");
+    res.send({status: "OK" , data: allWorkouts});
 };
 
 const getOneWorkout = (req, res) => {
@@ -11,7 +11,7 @@ const getOneWorkout = (req, res) => {
 };
 
 const createNewWorkout = (req, res) => {
-    const cratedWorkout = workoutService.createNewWorkout(req.params.workoutId);
+    const cratedWorkout = workoutService.createNewWorkout();
     res.send(`Create workout ${req.params.workoutId}`);
 };
 
